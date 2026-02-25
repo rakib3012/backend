@@ -1,9 +1,16 @@
 const mongoose = require("mongoose");
 const express = require("express");
+
 const usersRoute = require("./routes/usersRoutes"); // import all user route
+const postRoute = require('./routes/postsRoute')
+
+
 const app = express();
 app.use(express.json()); // for parsing application/json
+
+
 app.use("/api/users", usersRoute);
+app.use('/api/posts',postRoute)
 
 const mongooseUrl ="mongodb+srv://rakibuzzaman_db_user:rakib123456@e-commerce-01.l19qic1.mongodb.net/E-Commerce";
 mongoose.connect(mongooseUrl)
