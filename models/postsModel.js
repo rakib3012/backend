@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 
+
 const Schema = mongoose.Schema;
 
 const postSchema = new Schema({
@@ -8,7 +9,8 @@ const postSchema = new Schema({
     require: true,
   },
   userId: {
-    type: mongoose.Types.ObjectId,
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Users'
   },
 });
 
